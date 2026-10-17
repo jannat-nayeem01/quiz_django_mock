@@ -1,0 +1,15 @@
+{% for question in questions %}
+            {% comment %} <div class="card-body">
+
+    <p>{{quiz.title}}</p>
+    <p>
+        {% if quiz.description%}
+        {{quiz.description}}
+        <a href="{% url 'quiz_edit' quiz.id %}">Edit Quiz</a>
+        <a href="{% url 'show_questions' quiz.id %}">Show Question</a>
+        <a href="{% url 'question_create' quiz.id %}" >Create Question</a>
+        {%endif%}
+    </p>
+            </div> {% endcomment %}
+
+    {%endfor%}

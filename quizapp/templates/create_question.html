@@ -1,0 +1,29 @@
+{%extends 'base.html' %}
+{%block content%}
+<div>
+    <h2>Create Question</h2>
+    <form method='POST'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-primary w-100">Create</button>
+    </form>
+        {% comment %} <div class="card">
+   <h3 class="mt-4">Quiz List:</h3>
+    {% for quiz in quizes %}
+            <div class="card-body">
+
+    <p>{{quiz.title}}</p>
+    <p>
+        {% if quiz.description%}
+        {{quiz.description}}
+        <a href="{% url 'quiz_edit' quiz.id %}">Edit Quiz</a>
+        <a href="{% url 'create_question' quiz.id %}" >Create Question</a>
+        {%endif%}
+    </p>
+            </div>
+
+    {%endfor%}
+        </div> {% endcomment %}
+
+</div>
+{%endblock%}

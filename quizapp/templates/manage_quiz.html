@@ -1,0 +1,12 @@
+{%extends 'base.html' %}
+{%block content%}
+<div>
+    <h2>Edit Quiz</h2>
+    <form method='POST'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-primary w-100">Update</button>
+    </form>
+
+</div>
+{%endblock%}

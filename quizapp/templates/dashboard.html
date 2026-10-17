@@ -1,0 +1,24 @@
+{%extends 'base.html' %}
+{%block content%}
+    <h2>Dashboard</h2>
+<div class="col-md-6">
+    {% if request.user.user_type == 'admin' %}
+<p>Hello {{request.user}}</p>
+<a href="{% url 'create_quiz' %}">Create Quiz</a>
+    {% comment %} <form method='POST'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type='submit'>Login</button>
+    </form> {% endcomment %}
+{%endif%}
+ {% if request.user.user_type == 'participant' %}
+ <p>Hello {{request.user}}</p>
+ <a href="#">Check Profile</a>
+
+ {%endif%}
+
+</div>
+<div class="col-md-6">
+
+</div>
+{%endblock%}
